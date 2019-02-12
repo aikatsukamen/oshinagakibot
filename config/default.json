@@ -1,0 +1,44 @@
+{
+  "twitter": {
+    "consumer_key": "",
+    "consumer_secret": "",
+    "access_token_key": "",
+    "access_token_secret": ""
+  },
+  "google": {
+    "url": "https://script.google.com/macros/s/AKfycbz2U9QrTAeUto7JxWLH_mIFeE3iEj3qYVpNJrds2tW8LM7h8DNa/exec"
+  },
+  "log4js": {
+    "appenders": {
+      "system": {
+        "type": "file",
+        "filename": "./log/system.log",
+        "maxLogSize": 10485760,
+        "backups": 1
+      },
+      "access": {
+        "type": "file",
+        "filename": "./log/access.log",
+        "maxLogSize": 10485760,
+        "backups": 1
+      },
+      "console": {
+        "type": "console"
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": ["system"],
+        "level": "debug"
+      },
+      "access": {
+        "appenders": ["access"],
+        "level": "debug"
+      },
+      "console": {
+        "appenders": ["console"],
+        "level": "debug"
+      }
+    }
+  }
+}
