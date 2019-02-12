@@ -6,7 +6,7 @@ import { randomRetweet } from './twitter';
 // 起動時メッセージ
 logger.system.info('きらあこ～');
 
-/** アイドルの情報オブジェクト配列 */
+/** ツイート情報 */
 global.tweetList = [];
 
 // ツイートリスト取得
