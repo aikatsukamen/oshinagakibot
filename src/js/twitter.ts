@@ -37,7 +37,10 @@ export const randomRetweet = (): void => {
     const params = { trim_user: true };
     const client = new twitter(config.twitter);
     client.post(`statuses/retweet/${tweetId}.json`, params, (error, text, response) => {
-      if (!error) logger.system.error(text);
+      if (error) {
+        logger.system.error(error);
+        logger.system.error(text);
+      }
     });
   } catch (e) {
     logger.system.error(e);
