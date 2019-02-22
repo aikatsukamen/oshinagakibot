@@ -18,12 +18,13 @@ new CronJob('0 * * * *', async () => {
 // ランダムリツイート
 new CronJob('*/15 * * * *', randomRetweet).start();
 
-//  手動で動かすテスト
-// (async () => {
-//   global.tweetList = await getTweetList();
-//   logger.console.info(global.tweetList);
-//   await randomRetweet();
-// })();
+// 起動時実行
+(async () => {
+  logger.console.info('初回実行');
+  global.tweetList = await getTweetList();
+  logger.console.info(global.tweetList);
+  await randomRetweet();
+})();
 
 /**
  * シャットダウン処理

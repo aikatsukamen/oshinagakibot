@@ -33,7 +33,7 @@ export const randomRetweet = (): void => {
 
     // RT実行
     const tweetId: string = targetTweet.tweetId.match(/status\/([0-9]+)/)![1]; // ツイートURLのID部分を抽出
-    logger.access.info(`ランダムツイート：${tweetId}`);
+    logger.access.info(`ランダムツイート：${tweetId} org:${targetTweet.tweetId}`);
     const params = { trim_user: true };
     const client = new twitter(config.twitter);
     client.post(`statuses/retweet/${tweetId}.json`, params, (error, text, response) => {
